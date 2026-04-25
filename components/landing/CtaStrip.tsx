@@ -5,11 +5,12 @@ const CtaStrip: React.FC = () => {
   return (
     <section className={styles.ctaStrip}>
       <div className={styles.ctaBig}>
-        <h2 className={styles.ctaHeading}>Ready to elevate your brand?</h2>
+        <h2>Siap tumbuh <em>bareng&nbsp;kami?</em></h2>
+        <p>Konsultasi 30 menit, tanpa biaya, tanpa komitmen.</p>
+        <button className={styles.v3Btn}>Booking sekarang →</button>
       </div>
-      <p className={styles.ctaP}>Let’s craft something remarkable together.</p>
-      <button className={styles.v3Btn}>Talk to us</button>
     </section>
   );
 };
+
 export default CtaStrip;

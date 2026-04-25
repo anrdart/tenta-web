@@ -1,7 +1,6 @@
 .stats {
   background: var(--paper);
-  border-top: 2px solid var(--ink-950);
-  border-bottom: 2px solid var(--ink-950);
+  border-bottom: 4px solid var(--ink-950);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }

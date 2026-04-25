@@ -52,8 +52,8 @@ const industries = [
 ];
 
 const pricingItems = [
-  { name: 'Starter', price: '6', tag: 'Paling Populer', features: ['1-2 channel fokus', 'Laporan bulanan', 'Konsultasi 1x/bulan', 'Response 48 jam'], cta: 'Pilih Starter' },
-  { name: 'Growth', price: '15', tag: undefined, features: ['3-4 channel terintegrasi', 'Laporan mingguan', 'Dedicated PM', 'Creative 20 aset/bln', 'A/B testing'], cta: 'Pilih Growth' },
+  { name: 'Starter', price: '6', tag: undefined, features: ['1-2 channel fokus', 'Laporan bulanan', 'Konsultasi 1x/bulan', 'Response 48 jam'], cta: 'Pilih Starter' },
+  { name: 'Growth', price: '15', tag: 'Paling Populer', features: ['3-4 channel terintegrasi', 'Laporan mingguan', 'Dedicated PM', 'Creative 20 aset/bln', 'A/B testing'], cta: 'Pilih Growth' },
   { name: 'Scale', price: '30', tag: undefined, features: ['Omnichannel full-service', 'Dashboard real-time', 'Dedicated tim (3 org)', 'Creative unlimited', 'Priority support'], cta: 'Hubungi Sales' },
 ];
 

@@ -1,29 +1,42 @@
-.srvSection { padding: 72px 40px; background: var(--accent-cream); }
+.srvSection { padding: 72px 40px; background: var(--accent-cream); border-top: 4px solid var(--ink-950); border-bottom: 4px solid var(--ink-950); }
+
+/* Section header */
+.secHead { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; gap: 20px; }
+.secHead h2 { font-size: 52px; font-weight: 700; line-height: 1; letter-spacing: -0.035em; }
+.kickerInline { font-family: 'Montserrat'; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: var(--tenta-600); margin-bottom: 10px; }
+.secLink { font-weight: 700; color: var(--ink-950); border-bottom: 3px solid var(--tenta-500); padding-bottom: 2px; cursor: pointer; font-size: 15px; white-space: nowrap; }
+
 .srvGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.card { border: 2px solid var(--ink-950); border-radius: 20px; padding: 20px; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; position: relative; cursor: pointer; transition: all .15s; box-shadow: 5px 5px 0 var(--ink-950); gap: 16px; background: var(--paper); }
+.card { border: 2px solid var(--ink-950); border-radius: 20px; padding: 20px; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between; position: relative; cursor: pointer; transition: all .15s; box-shadow: 5px 5px 0 var(--ink-950); gap: 20px; background: var(--paper); }
 .card:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 var(--ink-950); }
 .card.orange { background: var(--tenta-400); }
 .card.dark { background: var(--ink-950); color: var(--paper); }
 .card.cream { background: var(--paper); }
 .card.orange2 { background: var(--tenta-200); }
-.cardHead { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
-.tag { background: var(--paper); border: 1.5px solid var(--ink-950); padding: 4px 10px; border-radius: 999px; font-size: 10.5px; font-weight: 700; color: var(--ink-950); letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
-.card.dark .tag { background: var(--tenta-500); border-color: var(--tenta-500); color: var(--ink-950); }
-.icon { width: 40px; height: 40px; flex-shrink: 0; background: var(--paper); border: 2px solid var(--ink-950); border-radius: 10px; display: grid; place-items: center; color: var(--ink-950); }
+
+.cardHead { display: flex; justify-content: space-between; align-items: flex-start; }
+.tag { background: var(--paper); border: 1.5px solid var(--ink-950); padding: 4px 10px; border-radius: 999px; font-size: 10.5px; font-weight: 700; color: var(--ink-950); letter-spacing: 0.04em; text-transform: uppercase; }
+.card.dark .tag { background: var(--tenta-500); border-color: var(--tenta-500); }
+.icon { width: 44px; height: 44px; background: var(--paper); border: 2px solid var(--ink-950); border-radius: 12px; display: grid; place-items: center; color: var(--ink-950); flex-shrink: 0; }
 .card.dark .icon { background: var(--tenta-500); }
-.card h3 { font-size: 17px; font-weight: 700; line-height: 1.15; }
-.desc { font-size: 13px; line-height: 1.45; flex: 1; opacity: .85; }
+
+.cardFoot { display: flex; flex-direction: column; gap: 14px; }
+.card h3 { font-size: 20px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: inherit; }
+.desc { font-size: 13px; line-height: 1.4; margin-top: 4px; opacity: .85; }
 .cardMeta { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1.5px solid rgba(0,0,0,.15); }
 .card.dark .cardMeta { border-color: rgba(255,255,255,.2); }
 .price { font-size: 13px; font-weight: 700; font-family: 'Montserrat'; }
-.cardArrow { background: var(--paper); border: 2px solid var(--ink-950); width: 32px; height: 32px; border-radius: 50%; font-size: 16px; font-weight: 700; cursor: pointer; display: grid; place-items: center; color: var(--ink-950); flex-shrink: 0; }
+.cardArrow { background: var(--paper); border: 2px solid var(--ink-950); width: 34px; height: 34px; border-radius: 50%; font-family: 'Montserrat'; font-size: 16px; font-weight: 700; cursor: pointer; display: grid; place-items: center; flex-shrink: 0; color: var(--ink-950); }
 .card:hover .cardArrow { background: var(--tenta-500); transform: rotate(45deg); }
 
 @media (max-width: 1024px) {
   .srvGrid { grid-template-columns: repeat(2, 1fr); }
+  .secHead h2 { font-size: 40px; }
 }
 @media (max-width: 600px) {
   .srvSection { padding: 48px 20px; }
   .srvGrid { grid-template-columns: 1fr; gap: 14px; }
   .card { min-height: auto; }
+  .secHead { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .secHead h2 { font-size: 34px; }
 }

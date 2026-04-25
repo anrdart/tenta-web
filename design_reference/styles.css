@@ -1,0 +1,63 @@
+/* TENTA shared base — variations extend this via their own scoped styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Orange palette — #FF7A1A base, cerah & hangat (lebih cerah dari Claude #D97757) */
+  --tenta-50:  #FFF4EC;
+  --tenta-100: #FFE6D1;
+  --tenta-200: #FFCAA0;
+  --tenta-300: #FFAD6B;
+  --tenta-400: #FF9240;
+  --tenta-500: #FF7A1A;   /* primary */
+  --tenta-600: #F06200;
+  --tenta-700: #C74E00;
+  --tenta-800: #973B00;
+  --tenta-900: #5F2500;
+
+  /* Warm neutrals yang kawin sama orange */
+  --ink-950: #1A130C;
+  --ink-900: #231A10;
+  --ink-800: #2E2317;
+  --ink-700: #4A3D2E;
+  --ink-600: #6B5A47;
+  --ink-500: #8F7D68;
+  --ink-400: #B8A68E;
+  --ink-300: #D8CABA;
+  --ink-200: #E8DFD0;
+  --ink-100: #F3EDE2;
+  --ink-50:  #FAF7F1;
+  --paper:   #FFFDF9;
+
+  /* Accents */
+  --accent-cream: #FFF9EC;
+  --accent-coral: #FF5A3D;
+  --success: #3DAE71;
+}
+
+/* Reset within card */
+.tenta-root * { box-sizing: border-box; }
+.tenta-root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern', 'ss01';
+  color: var(--ink-900);
+  background: var(--paper);
+}
+.tenta-root img { max-width: 100%; display: block; }
+.tenta-root button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+.tenta-root a { color: inherit; text-decoration: none; }
+
+/* Utility placeholders */
+.tenta-placeholder {
+  background:
+    repeating-linear-gradient(45deg,
+      rgba(255,122,26,.08) 0 8px,
+      rgba(255,122,26,.14) 8px 16px);
+  color: var(--tenta-700);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+  border: 1px dashed var(--tenta-300);
+  border-radius: 12px;
+}

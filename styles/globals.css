@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  /* Orange palette */
+  --tenta-50:  #FFF4EC;
+  --tenta-100: #FFE6D1;
+  --tenta-200: #FFCAA0;
+  --tenta-300: #FFAD6B;
+  --tenta-400: #FF9240;
+  --tenta-500: #FF7A1A;
+  --tenta-600: #F06200;
+  --tenta-700: #C74E00;
+  --tenta-800: #973B00;
+  --tenta-900: #5F2500;
+
+  /* Warm neutrals */
+  --ink-950: #1A130C;
+  --ink-900: #231A10;
+  --ink-800: #2E2317;
+  --ink-700: #4A3D2E;
+  --ink-600: #6B5A47;
+  --ink-500: #8F7D68;
+  --ink-400: #B8A68E;
+  --ink-300: #D8CABA;
+  --ink-200: #E8DFD0;
+  --ink-100: #F3EDE2;
+  --ink-50:  #FAF7F1;
+  --paper:   #FFFDF9;
+
+  /* Accents */
+  --accent-cream: #FFF9EC;
+  --accent-coral: #FF5A3D;
+  --success: #3DAE71;
+}
+
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Montserrat', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-900);
+  background: var(--accent-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block; }
+button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+a { color: inherit; text-decoration: none; }
+
+em {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--tenta-600);
+}
+
+strong { font-weight: 700; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', ui-sans-serif, system-ui;
+  letter-spacing: -0.03em;
+  color: var(--ink-950);
+}

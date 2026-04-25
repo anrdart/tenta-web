@@ -1,0 +1,145 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Service {
+  id          Int      @id @default(autoincrement())
+  icon        String   @db.VarChar(50)
+  title       String   @db.VarChar(150)
+  tag         String   @db.VarChar(50)
+  description String   @db.VarChar(300)
+  price       String   @db.VarChar(100)
+  color       String   @db.VarChar(20)
+  orderIndex  Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Stat {
+  id          Int     @id @default(autoincrement())
+  number      String  @db.VarChar(50)
+  label       String  @db.VarChar(100)
+  subtitle    String  @db.VarChar(100)
+  orderIndex  Int     @default(0)
+  isActive    Boolean @default(true)
+}
+
+model ProcessStep {
+  id          Int     @id @default(autoincrement())
+  stepNumber  String  @db.VarChar(10)
+  title       String  @db.VarChar(100)
+  description String  @db.VarChar(500)
+  orderIndex  Int     @default(0)
+  isActive    Boolean @default(true)
+}
+
+model CaseStudy {
+  id          Int      @id @default(autoincrement())
+  client      String   @db.VarChar(100)
+  industry    String   @db.VarChar(100)
+  metric      String   @db.VarChar(50)
+  metricLabel String   @db.VarChar(100)
+  period      String   @db.VarChar(50)
+  color       String   @db.VarChar(20)
+  orderIndex  Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Industry {
+  id          Int     @id @default(autoincrement())
+  emoji       String  @db.VarChar(10)
+  name        String  @db.VarChar(100)
+  orderIndex  Int     @default(0)
+  isActive    Boolean @default(true)
+}
+
+model PricingTier {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(100)
+  price       String   @db.VarChar(50)
+  tag         String?  @db.VarChar(100)
+  features    String   @db.Text
+  cta         String   @db.VarChar(100)
+  orderIndex  Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ClientLogo {
+  id          Int     @id @default(autoincrement())
+  name        String  @db.VarChar(100)
+  orderIndex  Int     @default(0)
+  isActive    Boolean @default(true)
+}
+
+model Testimonial {
+  id          Int     @id @default(autoincrement())
+  name        String  @db.VarChar(100)
+  role        String  @db.VarChar(150)
+  text        String  @db.Text
+  tint        String  @db.VarChar(20)
+  orderIndex  Int     @default(0)
+  isActive    Boolean @default(true)
+}
+
+model Faq {
+  id          Int     @id @default(autoincrement())
+  question    String  @db.Text
+  answer      String  @db.Text
+  orderIndex  Int     @default(0)
+  isActive    Boolean @default(true)
+}
+
+model SiteSetting {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique @db.VarChar(100)
+  value     String   @db.Text
+  updatedAt DateTime @updatedAt
+}
+
+model ContactSubmission {
+  id        Int                     @id @default(autoincrement())
+  name      String                  @db.VarChar(100)
+  email     String                  @db.VarChar(200)
+  phone     String?                 @db.VarChar(30)
+  message   String                  @db.Text
+  status    ContactStatus           @default(NEW)
+  createdAt DateTime                @default(now())
+}
+
+enum ContactStatus {
+  NEW
+  READ
+  REPLIED
+}
+
+model NewsletterSubscriber {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique @db.VarChar(200)
+  subscribedAt DateTime @default(now())
+  isActive     Boolean  @default(true)
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(100)
+  email     String   @unique @db.VarChar(200)
+  password  String   @db.VarChar(255)
+  role      UserRole
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+}

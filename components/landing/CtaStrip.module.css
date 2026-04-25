@@ -1,0 +1,18 @@
+.ctaStrip { background: var(--tenta-500); padding: 80px 40px; text-align: center; border-top: 4px solid var(--ink-950); border-bottom: 4px solid var(--ink-950); }
+.ctaBig { margin-bottom: 16px; }
+.ctaHeading { font-family: 'Montserrat'; font-size: 56px; font-weight: 700; line-height: 1.05; letter-spacing: -0.04em; color: var(--ink-950); }
+.ctaHeading em { color: var(--paper); font-style: normal; }
+.ctaP { color: var(--ink-900); font-size: 17px; margin-bottom: 28px; font-weight: 500; }
+.v3Btn { background: var(--ink-950); color: var(--paper); border: 0; padding: 14px 28px; border-radius: 999px; font-family: 'Montserrat'; font-weight: 700; font-size: 15px; cursor: pointer; transition: opacity .15s; }
+.v3Btn:hover { opacity: .88; }
+
+@media (max-width: 900px) {
+  .ctaStrip { padding: 64px 32px; }
+  .ctaHeading { font-size: 42px; }
+}
+@media (max-width: 600px) {
+  .ctaStrip { padding: 56px 20px; }
+  .ctaHeading { font-size: 32px; }
+  .ctaP { font-size: 15px; }
+  .v3Btn { padding: 13px 24px; }
+}

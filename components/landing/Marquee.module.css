@@ -1,0 +1,8 @@
+.marquee { background: var(--ink-950); color: var(--paper); border-top: 2px solid var(--ink-950); border-bottom: 2px solid var(--ink-950); padding: 14px 0; overflow: hidden; }
+.marqueeTrack { display: flex; gap: 32px; animation: v3-marquee 30s linear infinite; white-space: nowrap; font-family: 'Montserrat'; font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+.mqSep { color: var(--tenta-500); margin-left: 24px; font-style: normal; }
+@keyframes v3-marquee { to { transform: translateX(-50%); } }
+
+@media (max-width: 600px) {
+  .marqueeTrack { font-size: 15px; gap: 20px; }
+}

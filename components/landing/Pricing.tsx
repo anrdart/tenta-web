@@ -1,8 +1,22 @@
 import React from 'react';
 import styles from './Pricing.module.css';
+import { waLink } from '@/lib/wa';
 
 type Item = { name: string; price: string; tag?: string; features: string[]; cta: string };
 interface Props { items: Item[] }
+
+function pricingWaLink(item: Item): string {
+  // "Hubungi Sales" CTA = enterprise/custom tier
+  const isEnterprise = item.cta.toLowerCase().includes('hubungi');
+  if (isEnterprise) {
+    return waLink(
+      `Halo TENTA! Saya ingin mendiskusikan kebutuhan custom untuk paket *${item.name}*. Bisa dihubungi?`
+    );
+  }
+  return waLink(
+    `Halo TENTA! Saya tertarik dengan paket *${item.name}* (Rp ${item.price}jt/bln). Bisa dijelaskan lebih lanjut?`
+  );
+}
 
 const Pricing: React.FC<Props> = ({ items }) => {
   return (
@@ -27,7 +41,14 @@ const Pricing: React.FC<Props> = ({ items }) => {
                 <li key={i}><span className={styles.check}>✓</span> {f}</li>
               ))}
             </ul>
-            <button className={`${styles.tierCta} ${it.tag ? '' : styles.tierCtaOutline}`}>{it.cta}</button>
+            <a
+              href={pricingWaLink(it)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.tierCta} ${it.tag ? '' : styles.tierCtaOutline}`}
+            >
+              {it.cta}
+            </a>
           </div>
         ))}
       </div>

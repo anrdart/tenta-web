@@ -1,7 +1,19 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import styles from './Nav.module.css';
+import { WA_WHATSAPP, WA_GENERAL } from '@/lib/wa';
+
+const SECTIONS = ['home', 'services', 'case-studies', 'pricing', 'contact'] as const;
+type SectionId = (typeof SECTIONS)[number];
+
+const NAV_ITEMS: { id: SectionId; label: string }[] = [
+  { id: 'home', label: 'Beranda' },
+  { id: 'services', label: 'Layanan' },
+  { id: 'case-studies', label: 'Case Study' },
+  { id: 'pricing', label: 'Harga' },
+  { id: 'contact', label: 'Tentang' },
+];
 
 const TentaLogo = () => (
   <svg viewBox="0 0 40 40" width="36" height="36" aria-hidden>
@@ -13,7 +25,31 @@ const TentaLogo = () => (
 
 const Nav: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const close = () => setOpen(false);
+  const [activeSection, setActiveSection] = useState<SectionId>('home');
+  const close = useCallback(() => setOpen(false), []);
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    SECTIONS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(id);
+          }
+        },
+        { rootMargin: '-40% 0px -55% 0px', threshold: 0 },
+      );
+
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
 
   return (
     <>
@@ -23,15 +59,23 @@ const Nav: React.FC = () => {
           TENTA
         </div>
         <div className={styles.navLeft}>
-          <Link href="#home" className={styles.active}>Beranda</Link>
-          <Link href="#services">Layanan</Link>
-          <Link href="#case-studies">Case Study</Link>
-          <Link href="#pricing">Harga</Link>
-          <Link href="#contact">Tentang</Link>
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.id}
+              href={`#${item.id}`}
+              className={activeSection === item.id ? styles.active : ''}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
         <div className={styles.navRight}>
-          <span className={styles.chip}>💬 WhatsApp</span>
-          <button className={styles.btn}>Konsultasi Gratis</button>
+          <a href={WA_WHATSAPP} target="_blank" rel="noopener noreferrer" className={styles.chip}>
+            💬 WhatsApp
+          </a>
+          <a href={WA_GENERAL} target="_blank" rel="noopener noreferrer" className={styles.btn}>
+            Konsultasi Gratis
+          </a>
           <button
             className={`${styles.hamburger} ${open ? styles.hamburgerOpen : ''}`}
             onClick={() => setOpen(!open)}
@@ -44,12 +88,25 @@ const Nav: React.FC = () => {
       </nav>
       {open && (
         <div className={styles.mobileMenu}>
-          <Link href="#home" onClick={close}>Beranda</Link>
-          <Link href="#services" onClick={close}>Layanan</Link>
-          <Link href="#case-studies" onClick={close}>Case Study</Link>
-          <Link href="#pricing" onClick={close}>Harga</Link>
-          <Link href="#contact" onClick={close}>Tentang</Link>
-          <span className={styles.mobileChip}>Konsultasi Gratis</span>
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.id}
+              href={`#${item.id}`}
+              className={activeSection === item.id ? styles.active : ''}
+              onClick={close}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <a
+            href={WA_GENERAL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.mobileChip}
+            onClick={close}
+          >
+            Konsultasi Gratis
+          </a>
         </div>
       )}
     </>

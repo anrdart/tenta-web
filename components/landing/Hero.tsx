@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Hero.module.css';
+import { WA_GENERAL } from '@/lib/wa';
 
 const AvatarStack = () => (
   <div className={styles.avs}>
@@ -33,7 +34,9 @@ const Hero: React.FC = () => {
           <strong>4.2x rata-rata ROAS</strong> — bukan cuma impression kosong.
         </p>
         <div className={styles.cta}>
-          <button className={styles.btn}>Konsultasi Gratis 30 mnt →</button>
+          <a href={WA_GENERAL} target="_blank" rel="noopener noreferrer" className={styles.btn}>
+            Konsultasi Gratis 30 mnt →
+          </a>
           <div className={styles.ctaSide}>
             <AvatarStack />
             <div>

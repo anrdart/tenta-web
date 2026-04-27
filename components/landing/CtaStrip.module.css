@@ -2,7 +2,7 @@
 .ctaBig h2 { font-size: 64px; font-weight: 700; line-height: 1; letter-spacing: -0.04em; color: var(--ink-950); margin-bottom: 16px; }
 .ctaBig em { color: var(--paper); font-style: italic; }
 .ctaBig p { color: var(--ink-900); font-size: 17px; margin-bottom: 28px; font-weight: 500; }
-.v3Btn { background: var(--ink-950); color: var(--paper); border: 2px solid var(--ink-950); padding: 14px 28px; border-radius: 999px; font-family: 'Montserrat'; font-weight: 700; font-size: 15.5px; cursor: pointer; box-shadow: 4px 4px 0 rgba(0,0,0,.3); transition: all .1s; }
+.v3Btn { background: var(--ink-950); color: var(--paper); border: 2px solid var(--ink-950); padding: 14px 28px; border-radius: 999px; font-family: 'Montserrat'; font-weight: 700; font-size: 15.5px; cursor: pointer; box-shadow: 4px 4px 0 rgba(0,0,0,.3); transition: all .1s; display: inline-flex; align-items: center; }
 .v3Btn:hover { transform: translate(-1px,-1px); box-shadow: 6px 6px 0 rgba(0,0,0,.3); }
 
 @media (max-width: 900px) {

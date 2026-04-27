@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { syncLeadToSheet } from '@/lib/sheets';
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,6 +22,9 @@ export async function POST(request: NextRequest) {
     }
 
     await prisma.contactSubmission.create({ data: { name, email, phone: phone || null, message } });
+
+    // Fire-and-forget: do not await, never block the response
+    syncLeadToSheet({ name, email, phone, message });
 
     return NextResponse.json({ success: true, message: 'Contact submission received.' }, { status: 201 });
   } catch (error) {

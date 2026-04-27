@@ -14,7 +14,7 @@
 
 .heroLeft p { font-size: 17px; color: var(--ink-700); margin: 24px 0 32px; max-width: 480px; line-height: 1.55; }
 .cta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
-.btn { padding: 14px 26px; border-radius: 999px; background: var(--tenta-500); color: var(--paper); font-family: 'Montserrat', ui-sans-serif; font-weight: 700; font-size: 15.5px; border: 2px solid var(--ink-950); box-shadow: 4px 4px 0 var(--ink-950); cursor: pointer; transition: all .1s; }
+.btn { padding: 14px 26px; border-radius: 999px; background: var(--tenta-500); color: var(--paper); font-family: 'Montserrat', ui-sans-serif; font-weight: 700; font-size: 15.5px; border: 2px solid var(--ink-950); box-shadow: 4px 4px 0 var(--ink-950); cursor: pointer; transition: all .1s; display: inline-flex; align-items: center; }
 .btn:hover { transform: translate(-1px,-1px); box-shadow: 6px 6px 0 var(--ink-950); }
 .btn:active { transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--ink-950); }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Services.module.css';
 import ServiceIcon from './icons/ServiceIcon';
+import { waLink } from '@/lib/wa';
 
 type ServiceItem = {
   icon: string;
@@ -44,7 +45,14 @@ const Services: React.FC<Props> = ({ items }) => {
               </div>
               <div className={styles.cardMeta}>
                 <span className={styles.price}>{it.price}</span>
-                <button className={styles.cardArrow}>↗</button>
+                <a
+                  href={waLink(`Halo TENTA! Saya ingin tahu lebih lanjut soal layanan *${it.title}* (${it.price}). Bisa diinfo?`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.cardArrow}
+                >
+                  ↗
+                </a>
               </div>
             </div>
           </article>

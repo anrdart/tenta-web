@@ -24,7 +24,7 @@
 .check { color: var(--tenta-600); font-weight: 700; flex-shrink: 0; }
 .tier.featured .check { color: var(--paper); background: var(--ink-950); width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; margin-top: 1px; }
 
-.tierCta { background: var(--tenta-500); color: var(--paper); border: 2px solid var(--ink-950); border-radius: 999px; padding: 14px 26px; font-family: 'Montserrat'; font-weight: 700; font-size: 15px; cursor: pointer; text-align: center; box-shadow: 4px 4px 0 var(--ink-950); transition: all .1s; }
+.tierCta { background: var(--tenta-500); color: var(--paper); border: 2px solid var(--ink-950); border-radius: 999px; padding: 14px 26px; font-family: 'Montserrat'; font-weight: 700; font-size: 15px; cursor: pointer; text-align: center; box-shadow: 4px 4px 0 var(--ink-950); transition: all .1s; display: block; }
 .tierCta:hover { transform: translate(-1px,-1px); box-shadow: 6px 6px 0 var(--ink-950); }
 .tierCta:active { transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--ink-950); }
 .tier.featured .tierCta { background: var(--ink-950); color: var(--paper); }

@@ -99,6 +99,15 @@ const Nav: React.FC = () => {
             </Link>
           ))}
           <a
+            href={WA_WHATSAPP}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.mobileChipOutline}
+            onClick={close}
+          >
+            💬 WhatsApp
+          </a>
+          <a
             href={WA_GENERAL}
             target="_blank"
             rel="noopener noreferrer"

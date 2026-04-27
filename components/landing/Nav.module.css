@@ -73,9 +73,24 @@
   transition: background .15s;
 }
 .mobileMenu a:hover { background: rgba(26,19,12,.07); }
-.mobileChip {
+.mobileChipOutline {
   display: block;
   margin-top: 12px;
+  background: var(--paper);
+  color: var(--ink-950);
+  padding: 14px 20px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid var(--ink-950);
+  transition: background .15s;
+}
+.mobileChipOutline:hover { background: var(--tenta-100); }
+.mobileChip {
+  display: block;
+  margin-top: 8px;
   background: var(--ink-950);
   color: var(--paper);
   padding: 14px 20px;

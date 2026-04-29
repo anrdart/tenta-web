@@ -1,0 +1,44 @@
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 40%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.08) 60%,
+    transparent 100%
+  );
+  background-size: 600px 100%;
+  animation: skShimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes skShimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+/* Block shapes inside skeletons */
+.inner {
+  padding: 72px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.row { display: flex; gap: 18px; }
+
+.bar {
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .inner { padding: 48px 20px; }
+}

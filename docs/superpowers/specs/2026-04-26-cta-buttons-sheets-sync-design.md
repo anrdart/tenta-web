@@ -11,14 +11,14 @@ Two goals:
 1. All CTA buttons on the landing page become functional WhatsApp links with context-aware pre-filled messages.
 2. Contact form submissions at `/contact` are synced to the client's Google Sheet via a Google Apps Script webhook — so every lead is tracked in their existing CRM sheet automatically.
 
-WhatsApp number: `6285156242860`  
+WhatsApp number: `6285177111104`  
 Google Sheet: `177Ms9ZFhvoSWlXQNEYJOni6-BUO5RjgRtYbPXHraxMo`
 
 ---
 
 ## Part 1 — CTA Buttons → WhatsApp
 
-All CTA buttons become `<a>` tags (or `onClick` + `window.open`) pointing to `https://wa.me/6285156242860?text=<encoded-message>`.
+All CTA buttons become `<a>` tags (or `onClick` + `window.open`) pointing to `https://wa.me/6285177111104?text=<encoded-message>`.
 
 ### Button Map
 
@@ -37,7 +37,7 @@ All CTA buttons become `<a>` tags (or `onClick` + `window.open`) pointing to `ht
 
 - Nav buttons: ubah `<button>` jadi `<a>` dengan `target="_blank" rel="noopener noreferrer"`.
 - Pricing & Services: tiap item punya pesan berbeda — message di-generate dari prop data (`name`, `price`, `title`).
-- `wa.me` URL: `https://wa.me/6285156242860?text=${encodeURIComponent(message)}`.
+- `wa.me` URL: `https://wa.me/6285177111104?text=${encodeURIComponent(message)}`.
 - Buat helper function `waLink(message: string): string` di `lib/wa.ts` untuk reuse.
 
 ---

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import styles from './Footer.module.css';
 
 function Copyright() {
@@ -33,6 +34,14 @@ const Footer: React.FC = () => {
     <footer className={styles.footer}>
       <div className={styles.footerTop}>
         <div className={styles.footerBrand}>
+          <Image
+            src="/logo-dark.png"
+            alt="TENTA"
+            width={418}
+            height={137}
+            style={{ height: '36px', width: 'auto' }}
+            unoptimized
+          />
           <p>Digital marketing agency berbasis di Jakarta, bantu brand Indonesia tumbuh dengan data.</p>
           <div className={styles.socials}>
             <a>IG</a><a>TW</a><a>LI</a><a>TT</a>

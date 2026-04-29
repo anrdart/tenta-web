@@ -23,7 +23,7 @@ const Pricing: React.FC<Props> = ({ items }) => {
     <section className={styles.priceSection} id="pricing">
       <div className={styles.secHeadC}>
         <div className={styles.kickerInline}>PAKET HARGA</div>
-        <h2>Mulai dari <em>6jt/bulan</em></h2>
+        <h2>Pilih <em>paketmu</em></h2>
         <p className={styles.secSub}>Semua paket bisa custom. Angka di bawah adalah management fee — belum termasuk budget ads.</p>
       </div>
       <div className={styles.priceGrid}>

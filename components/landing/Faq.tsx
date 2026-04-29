@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import styles from './Faq.module.css';
+import { WA_GENERAL } from '@/lib/wa';
 
 type Item = { question: string; answer: string };
 interface Props { items: Item[] }
@@ -14,7 +15,15 @@ const Faq: React.FC<Props> = ({ items }) => {
       <div className={styles.faqHead}>
         <div className={styles.faqKicker}>FAQ ✦</div>
         <h2>Masih <em>ragu?</em></h2>
-        <p>Pertanyaan yang sering muncul.</p>
+        <p>Pertanyaan yang sering muncul. Kalau masih penasaran, langsung tanya kami.</p>
+        <a
+          href={WA_GENERAL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.faqCta}
+        >
+          Konsultasi Gratis →
+        </a>
       </div>
       <div className={styles.faqList}>
         {items.map((it, idx) => (

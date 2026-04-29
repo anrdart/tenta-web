@@ -3,10 +3,10 @@
 /* Section header */
 .secHead { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; gap: 20px; }
 .secHead h2 { font-size: 52px; font-weight: 700; line-height: 1; letter-spacing: -0.035em; }
-.kickerInline { font-family: 'Montserrat'; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: var(--tenta-600); margin-bottom: 10px; }
+.kickerInline { font-family: 'Montserrat'; font-size: 16px; font-weight: 700; letter-spacing: 0.08em; color: var(--tenta-600); margin-bottom: 10px; }
 .secLink { font-weight: 700; color: var(--ink-950); border-bottom: 3px solid var(--tenta-500); padding-bottom: 2px; cursor: pointer; font-size: 15px; white-space: nowrap; }
 
-.srvGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.srvGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .card { border: 2px solid var(--ink-950); border-radius: 20px; padding: 20px; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between; position: relative; cursor: pointer; transition: all .15s; box-shadow: 5px 5px 0 var(--ink-950); gap: 20px; background: var(--paper); }
 .card:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 var(--ink-950); }
 .card.orange { background: var(--tenta-400); }
@@ -29,7 +29,7 @@
 .cardArrow { background: var(--paper); border: 2px solid var(--ink-950); width: 34px; height: 34px; border-radius: 50%; font-family: 'Montserrat'; font-size: 16px; font-weight: 700; cursor: pointer; display: grid; place-items: center; flex-shrink: 0; color: var(--ink-950); }
 .card:hover .cardArrow { background: var(--tenta-500); transform: rotate(45deg); }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .srvGrid { grid-template-columns: repeat(2, 1fr); }
   .secHead h2 { font-size: 40px; }
 }

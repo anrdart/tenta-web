@@ -4,21 +4,17 @@ import Marquee from '@/components/landing/Marquee';
 import Services from '@/components/landing/Services';
 import Process from '@/components/landing/Process';
 import CaseStudies from '@/components/landing/CaseStudies';
-import Industries from '@/components/landing/Industries';
-import Pricing from '@/components/landing/Pricing';
 import Testimonials from '@/components/landing/Testimonials';
 import Faq from '@/components/landing/Faq';
 import CtaStrip from '@/components/landing/CtaStrip';
 
 const services = [
-  { icon: 'seo', title: 'SEO Organik', tag: 'Search', price: '6jt/bln', color: 'orange', description: 'Naik ke halaman 1, tanpa black-hat.' },
-  { icon: 'ads', title: 'Google Ads', tag: 'Paid', price: '8jt/bln', color: 'dark', description: 'ROAS fokus, budget efisien, tracking bersih.' },
-  { icon: 'social', title: 'Social Media', tag: 'Organic', price: '5jt/bln', color: 'cream', description: '30 post + engagement & community.' },
-  { icon: 'meta', title: 'Meta & TikTok Ads', tag: 'Paid', price: '7jt/bln', color: 'orange2', description: 'Creative + targeting + A/B testing.' },
-  { icon: 'content', title: 'Content Marketing', tag: 'Content', price: '4jt/bln', color: 'dark', description: 'Blog, copywriting, SEO-friendly.' },
-  { icon: 'brand', title: 'Branding & Creative', tag: 'Brand', price: '4,9jt', color: 'orange', description: 'Logo, identitas, visual guideline.' },
-  { icon: 'data', title: 'Analytics & Report', tag: 'Data', price: '2jt/bln', color: 'cream', description: 'Dashboard custom + insight bulanan.' },
-  { icon: 'web', title: 'Web Development', tag: 'Digital', price: '8,5jt', color: 'orange2', description: 'Landing, company profile, e-commerce.' },
+  { icon: 'web',    title: 'Web Development',  tag: 'Digital',   price: '8,5jt',    color: 'dark',    description: 'Landing, company profile, e-commerce.' },
+  { icon: 'ads',    title: 'Google Ads',        tag: 'Paid',      price: '8jt/bln',  color: 'orange',  description: 'ROAS fokus, budget efisien, tracking bersih.' },
+  { icon: 'meta',   title: 'Meta Ads',          tag: 'Paid',      price: '7jt/bln',  color: 'cream',   description: 'Creative + targeting + A/B testing.' },
+  { icon: 'social', title: 'Meta Account',      tag: 'Social',    price: '5jt/bln',  color: 'orange2', description: 'Setup, management & grow akun Meta.' },
+  { icon: 'data',   title: 'Google Account',    tag: 'Search',    price: '4jt/bln',  color: 'dark',    description: 'Google My Business, Search Console, GA4.' },
+  { icon: 'brand',  title: 'Consulting',        tag: 'Strategy',  price: 'Custom',   color: 'orange',  description: 'Strategi, audit, dan roadmap pertumbuhan.' },
 ];
 
 const stats = [
@@ -28,7 +24,7 @@ const stats = [
   { number: '98%', label: 'Klien Repeat', subtitle: 'Retensi 12 bulan' },
 ];
 
-const logos = ['Kulaku', 'Teras Kopi', 'Kanaya', 'Satwa', 'Ombak', 'Beranda', 'Langit Biru', 'Senja Co.', 'Kalimaya', 'Pinang'];
+const logos = ['Slide', 'Copy Writing', 'SEO', 'Service'];
 
 const processItems = [
   { stepNumber: '01', title: 'Discover', description: 'Audit kondisi saat ini — website, ads, data, kompetitor. Kami cari ruang tumbuh.' },
@@ -41,20 +37,6 @@ const caseItems = [
   { client: 'Kulaku F&B', industry: 'F&B', metric: '+240%', metricLabel: 'Website traffic', period: '6 bulan', color: 'orange' },
   { client: 'Teras Kopi', industry: 'Coffee Chain', metric: '5.8x', metricLabel: 'ROAS Meta Ads', period: '3 bulan', color: 'dark' },
   { client: 'Kanaya Fashion', industry: 'Lifestyle', metric: '+180K', metricLabel: 'Followers organik', period: '12 bulan', color: 'cream' },
-];
-
-const industries = [
-  { emoji: '🍜', name: 'F&B & Kuliner' },
-  { emoji: '👗', name: 'Fashion & Lifestyle' },
-  { emoji: '💻', name: 'SaaS & Tech' },
-  { emoji: '🛒', name: 'E-commerce & D2C' },
-  { emoji: '🏪', name: 'UMKM Lokal' },
-];
-
-const pricingItems = [
-  { name: 'Starter', price: '6', tag: undefined, features: ['1-2 channel fokus', 'Laporan bulanan', 'Konsultasi 1x/bulan', 'Response 48 jam'], cta: 'Pilih Starter' },
-  { name: 'Growth', price: '15', tag: 'Paling Populer', features: ['3-4 channel terintegrasi', 'Laporan mingguan', 'Dedicated PM', 'Creative 20 aset/bln', 'A/B testing'], cta: 'Pilih Growth' },
-  { name: 'Scale', price: '30', tag: undefined, features: ['Omnichannel full-service', 'Dashboard real-time', 'Dedicated tim (3 org)', 'Creative unlimited', 'Priority support'], cta: 'Hubungi Sales' },
 ];
 
 const testimonials = [
@@ -80,8 +62,6 @@ export default function PublicPage() {
       <Services items={services} />
       <Process items={processItems} />
       <CaseStudies items={caseItems} />
-      <Industries items={industries} />
-      <Pricing items={pricingItems} />
       <Testimonials items={testimonials} />
       <Faq items={faqs} />
       <CtaStrip />

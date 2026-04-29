@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './Hero.module.css';
 import { WA_GENERAL } from '@/lib/wa';
 
@@ -55,19 +56,16 @@ const Hero: React.FC = () => {
           {/* Inner solid ring (dark, reverse) */}
           <div className={`${styles.markRing} ${styles.markRing2}`} />
 
-          {/* Core: circle with triangle */}
+          {/* Core: main logo */}
           <div className={styles.markCore}>
-            <svg viewBox="0 0 120 120" width="100%" height="100%">
-              <defs>
-                <clipPath id="v3-clip"><circle cx="60" cy="60" r="50"/></clipPath>
-              </defs>
-              <circle cx="60" cy="60" r="50" fill="var(--ink-950)"/>
-              <g clipPath="url(#v3-clip)">
-                <path d="M10 85 L60 20 L110 85 Z" fill="var(--tenta-500)"/>
-                <circle cx="60" cy="55" r="12" fill="var(--paper)"/>
-                <text x="60" y="59" textAnchor="middle" fontSize="10" fontWeight="700" fill="var(--tenta-600)" fontFamily="Montserrat">↗</text>
-              </g>
-            </svg>
+            <Image
+              src="/mainlogo.png"
+              alt="TENTA"
+              fill
+              sizes="30vw"
+              style={{ objectFit: 'contain' }}
+              priority
+            />
           </div>
 
           {/* Sticker 1 — circular text badge (top right) */}

@@ -35,7 +35,7 @@
 - [ ] **Step 1: Create the file**
 
 ```ts
-const WA_NUMBER = '6285156242860';
+const WA_NUMBER = '6285177111104';
 
 export function waLink(message: string): string {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -699,7 +699,7 @@ cd /home/ekalliptus/dev/tentaklik/tenta-web && npx next dev 2>&1 &
 ```
 
 Open `http://localhost:3000` and verify:
-- [ ] Nav "💬 WhatsApp" opens `wa.me/6285156242860` with correct message
+- [ ] Nav "💬 WhatsApp" opens `wa.me/6285177111104` with correct message
 - [ ] Nav "Konsultasi Gratis" opens WhatsApp with consultation message
 - [ ] Hero "Konsultasi Gratis 30 mnt →" opens WhatsApp
 - [ ] CtaStrip "Booking sekarang →" opens WhatsApp with booking message

@@ -50,11 +50,12 @@ const Nav: React.FC = () => {
       <nav className={styles.nav}>
         <div className={styles.brand}>
           <Image
-            src="/logo-dark.png"
+            src="/logo-light.png"
             alt="TENTA"
-            width={140}
-            height={36}
+            width={918}
+            height={262}
             style={{ height: '36px', width: 'auto' }}
+            unoptimized
             priority
           />
         </div>
@@ -88,15 +89,6 @@ const Nav: React.FC = () => {
       </nav>
       {open && (
         <div className={styles.mobileMenu}>
-          <div className={styles.mobileBrand}>
-            <Image
-              src="/logo-light.png"
-              alt="TENTA"
-              width={120}
-              height={32}
-              style={{ height: '32px', width: 'auto' }}
-            />
-          </div>
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.id}
@@ -115,15 +107,6 @@ const Nav: React.FC = () => {
             onClick={close}
           >
             💬 WhatsApp
-          </a>
-          <a
-            href={WA_GENERAL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.mobileChip}
-            onClick={close}
-          >
-            Konsultasi Gratis
           </a>
         </div>
       )}

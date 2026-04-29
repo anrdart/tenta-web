@@ -34,7 +34,12 @@
 .markRing2 { inset: 60px; border-color: var(--ink-950); border-style: solid; animation-duration: 60s; animation-direction: reverse; }
 @keyframes v3-spin { to { transform: rotate(360deg); } }
 
-.markCore { position: absolute; inset: 110px; }
+.markCore { position: absolute; inset: 110px; animation: v3-float 3.5s ease-in-out infinite; }
+@keyframes v3-float {
+  0%, 100% { transform: translateY(0) scale(1) rotate(-1deg); }
+  30% { transform: translateY(-14px) scale(1.04) rotate(1.5deg); }
+  60% { transform: translateY(-6px) scale(1.02) rotate(-0.5deg); }
+}
 
 .sticker { position: absolute; filter: drop-shadow(4px 4px 0 var(--ink-950)); }
 .st1 { top: 0; right: 20px; transform: rotate(12deg); animation: v3-bob 4s ease-in-out infinite; --r: 12deg; }

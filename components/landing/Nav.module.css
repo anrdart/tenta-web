@@ -44,59 +44,39 @@
   top: 64px;
   left: 0;
   right: 0;
-  background: var(--ink-950);
-  border-bottom: 2px solid var(--tenta-500);
+  background: var(--paper);
+  border-bottom: 2px solid var(--ink-950);
   z-index: 99;
   display: flex;
   flex-direction: column;
   padding: 16px 24px 24px;
   gap: 4px;
 }
-.mobileBrand {
-  display: flex;
-  align-items: center;
-  padding-bottom: 16px;
-  margin-bottom: 8px;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-}
 .mobileMenu a {
   padding: 14px 16px;
   border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
-  color: var(--ink-200);
+  color: var(--ink-800);
   transition: background .15s;
 }
-.mobileMenu a:hover { background: rgba(255,255,255,0.08); }
-.mobileMenu .active { background: var(--tenta-500) !important; color: var(--ink-950) !important; }
+.mobileMenu a:hover { background: rgba(26,19,12,.07); }
+.mobileMenu .active { background: var(--ink-950) !important; color: var(--paper) !important; }
 .mobileChipOutline {
   display: block;
   margin-top: 12px;
-  background: transparent;
-  color: var(--ink-100);
+  background: var(--paper);
+  color: var(--ink-950);
   padding: 14px 20px;
   border-radius: 999px;
   font-size: 15px;
   font-weight: 600;
   text-align: center;
   cursor: pointer;
-  border: 2px solid rgba(255,255,255,0.25);
+  border: 2px solid var(--ink-950);
   transition: background .15s;
 }
-.mobileChipOutline:hover { background: rgba(255,255,255,0.08); }
-.mobileChip {
-  display: block;
-  margin-top: 8px;
-  background: var(--ink-950);
-  color: var(--paper);
-  padding: 14px 20px;
-  border-radius: 999px;
-  font-size: 15px;
-  font-weight: 700;
-  text-align: center;
-  font-family: 'Montserrat';
-  cursor: pointer;
-}
+.mobileChipOutline:hover { background: var(--tenta-100); }
 
 @media (max-width: 768px) {
   .nav { padding: 12px 20px; }

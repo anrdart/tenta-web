@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Nav.module.css';
 import { WA_WHATSAPP, WA_GENERAL } from '@/lib/wa';
@@ -15,13 +16,6 @@ const NAV_ITEMS: { id: SectionId; label: string }[] = [
   { id: 'contact', label: 'Tentang' },
 ];
 
-const TentaLogo = () => (
-  <svg viewBox="0 0 40 40" width="36" height="36" aria-hidden>
-    <circle cx="20" cy="20" r="18" fill="var(--tenta-500)"/>
-    <path d="M8 28 L20 10 L32 28 Z" fill="var(--paper)"/>
-    <circle cx="20" cy="20" r="3" fill="var(--ink-950)"/>
-  </svg>
-);
 
 const Nav: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -55,8 +49,14 @@ const Nav: React.FC = () => {
     <>
       <nav className={styles.nav}>
         <div className={styles.brand}>
-          <TentaLogo />
-          TENTA
+          <Image
+            src="/logo-dark.png"
+            alt="TENTA"
+            width={140}
+            height={36}
+            style={{ height: '36px', width: 'auto' }}
+            priority
+          />
         </div>
         <div className={styles.navLeft}>
           {NAV_ITEMS.map((item) => (
@@ -88,6 +88,15 @@ const Nav: React.FC = () => {
       </nav>
       {open && (
         <div className={styles.mobileMenu}>
+          <div className={styles.mobileBrand}>
+            <Image
+              src="/logo-light.png"
+              alt="TENTA"
+              width={120}
+              height={32}
+              style={{ height: '32px', width: 'auto' }}
+            />
+          </div>
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.id}
